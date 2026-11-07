@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Keuangan</title>
+
+    <!-- Memanggil File Manifest Resmi (pakai manifest.json milik folder ini, bukan milik inventori) -->
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background-color: #12121a; }
+        iframe { border: none; width: 100%; height: 100%; }
+    </style>
+</head>
+<body>
+    <!-- URL Aplikasi GAS Keuangan (src diisi oleh script di bawah agar hanya dimuat sekali, lengkap dengan ?tkn=) -->
+    <iframe id="appFrame"></iframe>
+    <script>
+        // Teruskan query string (contoh: ?tkn=xxxx) dari wrapper ke GAS
+        const baseUrl = "https://script.google.com/macros/s/AKfycbzaEMt22c1RVPAvxgMvo8keHbMcrLC3rtc4p-PJzIDTBmZjZuI3bn9rHa-Q-AevS8cHow/exec";
+        const params  = window.location.search; // "" atau "?tkn=xxxxx"
+        document.getElementById("appFrame").src = baseUrl + params;
+
+        // Mendaftarkan File Service Worker Resmi
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then(() => console.log("Service Worker Terdaftar!"))
+            .catch(err => console.log("Gagal:", err));
+        }
+    </script>
+</body>
+</html>
