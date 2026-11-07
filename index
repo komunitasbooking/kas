@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- URL Aplikasi GAS Keuangan (src diisi oleh script di bawah agar hanya dimuat sekali, lengkap dengan ?tkn=) -->
-    <iframe id="appFrame"></iframe>
+    <iframe id="https://script.google.com/macros/s/AKfycbzaEMt22c1RVPAvxgMvo8keHbMcrLC3rtc4p-PJzIDTBmZjZuI3bn9rHa-Q-AevS8cHow/exec"></iframe>
     <script>
         // Teruskan query string (contoh: ?tkn=xxxx) dari wrapper ke GAS
         const baseUrl = "https://script.google.com/macros/s/AKfycbzaEMt22c1RVPAvxgMvo8keHbMcrLC3rtc4p-PJzIDTBmZjZuI3bn9rHa-Q-AevS8cHow/exec";
