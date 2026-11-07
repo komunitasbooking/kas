@@ -1,0 +1,2 @@
+# kas
+pengeluaran dan pemasukan
